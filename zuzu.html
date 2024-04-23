@@ -128,6 +128,13 @@ function calculateResult() {
     `;
     document.getElementById("orderTable").appendChild(newRow);
   });
+  const AmountRow = document.createElement("tr");
+  AmountRow.classList.add("cloned-row");
+  AmountRow.innerHTML = `
+    <td>Net sum</td>
+    <td>${totalSum.toFixed(2)} DA</td>
+  `;
+  document.getElementById("orderTable").appendChild(AmountRow);
 
   let TaxAmount = 0;
 
@@ -158,7 +165,7 @@ if (taxExemptionCheckbox.checked) {
   const netAmountRow = document.createElement("tr");
   netAmountRow.classList.add("cloned-row");
   netAmountRow.innerHTML = `
-    <td>Net Amount</td>
+    <td>gross Amount</td>
     <td>${netAmount.toFixed(2)} DA</td>
   `;
   document.getElementById("orderTable").appendChild(netAmountRow);
